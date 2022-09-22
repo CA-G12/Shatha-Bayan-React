@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+.header h1 {
+    color: red;
+    text-align: center;
+    margin-left: 35rem;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #e5e5e5;
+    padding: 10px;
+}
+
+.header button {
+    margin-right: 2rem;
+    border-radius: 10px;
+    width: 5%;
+    height: 40px;
+    border: none;
+    background-color: #e5e5e5;
+    color: red;
+    font-size: 20px;
+    cursor: pointer;
+}
