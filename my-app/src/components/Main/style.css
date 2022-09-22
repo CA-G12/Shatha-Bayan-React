@@ -1,0 +1,97 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+.input {
+    text-align: center;
+}
+
+.input input {
+    width: 35%;
+    padding: 8px;
+    margin-top: 3rem;
+    margin-right: 10px;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+
+}
+
+.input button {
+    border: 1px solid #e5e5e5;
+    padding: 8px;
+    border-radius: 5px;
+    color: red;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2rem;
+}
+
+.card {
+    margin: 2rem;
+    border-radius: 10px;
+    background-color: #ededed;
+    width: 260px;
+    height: 350px;
+}
+
+.details {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.card img {
+    width: 100%;
+    height: 295px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.details p {
+    font-weight: bold;
+}
+
+.fa-heart {
+    border: none;
+    background-color: #ededed;
+    font-size: 22px;
+    cursor: pointer;
+    color: gray;
+
+}
+
+.loading,
+.error {
+    text-align: center;
+    color: red;
+    font-size: 30px;
+    margin-top: 1rem;
+}
+
+.popup-container {
+    position: fixed;
+    width: 90%;
+    height: 100%;
+    top: 0px;
+    /* background-color: rgb(219 219 219 / 46%); */
+    padding: 25px;
+    transition: all .4s ease;
+}
+
+.popup {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    background-color: #fbfbfb;
+    position: relative;
+    padding: 1rem;
+    border-radius: 40px;
+    padding: 3rem;
+    transform: scale(.8);
+}
