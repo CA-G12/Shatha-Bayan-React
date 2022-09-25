@@ -1,62 +1,59 @@
-import React from 'react'
-import { Search } from './Search'
-import { Cards } from './Cards'
-import { Header } from '../Header'
+import React from "react";
+import { Search } from "./Search";
+import { Cards } from "./Cards";
+import { Header } from "../Header";
 export class Main extends React.Component {
     state = {
         data: null,
-        movieName: '',
+        movieName: "",
         initialize: false,
-        favorite: JSON.parse(window.localStorage.getItem('favorite')) || [],
-        error: false,
-        close: { visibility: 'hidden' }
-    }
+        favorite: [],
+        close: true,
+    };
 
     setData = (data1) => {
-        this.setState({ data: data1 })
-    }
+        this.setState({ data: data1 });
+    };
     setMovieName = (movieName) => {
-        this.setState({ movieName: movieName })
-    }
+        this.setState({ movieName: movieName });
+    };
 
     setInitialize = (newInitialize) => {
-        this.setState({ initialize: newInitialize })
-    }
+        this.setState({ initialize: newInitialize });
+    };
+    setFavorite = (list) => {
+        this.setState({ favorite: list });
+    };
 
-    addFav = (ele) => {
-        this.setState(prev => {
-            const newFav = [...prev.favorite, ele]
-            localStorage.setItem('favorite', JSON.stringify(newFav))
-            return { favorite: newFav }
-        })
+    setClose=(bool)=>{
+        this.setState({close: bool})
     }
-
-    setError = (err) => {
-        this.setState({ error: err })
-    }
-
-    removeFav = (ele) => {
-        this.setState(prev => {
-            const newFav = prev.favorite.filter(i => i.id !== ele.id)
-            localStorage.setItem('favorite', JSON.stringify(newFav))
-            return { favorite: newFav }
-        })
-    }
-    handelClose = (display) => {
-        this.setState({
-            close: { visibility: display }
-        })
-    }
-
     render() {
-        return <>
-            <Header initialize={this.state.initialize} setInitialize={this.setInitialize} favorite={this.state.favorite} handelClose={this.handelClose}></Header>
-            <Search movieName={this.state.movieName} setData={this.setData} setMovieName={this.setMovieName} error={this.state.error} setError={this.setError}> </Search>
-            <Cards data={this.state.data} setData={this.setData} favorite={this.state.favorite} addFav={this.addFav} removeFav={this.removeFav} error={this.state.error} setError={this.setError} handelClose={this.handelClose} close={this.state.close}></Cards>
-        </>
+        return (
+            <>
+                <Header
+                    initialize={this.state.initialize}
+                    setInitialize={this.setInitialize}
+                    favorite={this.state.favorite}
+                    close={this.state.close}
+                    setClose={this.setClose}
+                ></Header>
+                <Search
+                    movieName={this.state.movieName}
+                    setData={this.setData}
+                    setMovieName={this.setMovieName}
+                >
+                    {" "}
+                </Search>
+                <Cards
+                    data={this.state.data}
+                    setData={this.setData}
+                    favorite={this.state.favorite}
+                    setFavorite={this.setFavorite}
+                ></Cards>
+            </>
+        );
     }
-
 }
 
-
-export default Main
+export default Main;

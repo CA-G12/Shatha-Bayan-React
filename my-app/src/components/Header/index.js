@@ -14,7 +14,7 @@ export class Header extends React.Component {
                 // this.props.handelClose("block")
             }
             }>Favorites</button>
-            {this.props.initialize && <List favorites={this.props.favorite}></List>}
+            {this.props.initialize && this.props.close && <List setClose={this.props.setClose} favorites={this.props.favorite}></List>}
         </div>
     }
 }
